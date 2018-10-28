@@ -22,7 +22,7 @@ sov-cli -datadir=$datadir getpeerinfo | jq -r '.[] | select(.inbound==false) | \
 echo '==========================================================================='
 uptime
 echo '==========================================================================='
-echo 'Masternode Status: \n# sov-cli vnode status' && sov-cli -datadir=$datadir vnode status
+echo 'Masternode Status: \n# sov-cli masternode status' && sov-cli -datadir=$datadir masternode status
 echo '==========================================================================='
 echo 'Masternode Information: \n# sov-cli getinfo' && sov-cli -datadir=$datadir getinfo
 echo '==========================================================================='
