@@ -90,7 +90,7 @@ fi
 cd ~
 pkill ./sovd
 pkill sovd
-cd SovereignMasternodeSetup
+cd Scripts
 
 #Check Deps
 if [ -d "/var/lib/fail2ban/" ]; 
@@ -181,20 +181,20 @@ fi
 
 #Installing Daemon
 cd ~
-mkdir ~/SovereignMasternodeSetup/sov
+mkdir ~/Scripts/sov
 sudo rm sov-Linux64-V1.2.1
 wget https://github.com/SovCoinX/SovCoin/releases/download/2.0.1/sov-mn-2.0.1-ubuntu.tar.gz
-tar xzf sov-mn-2.0.1-ubuntu.tar.gz -C ~/SovereignMasternodeSetup/sov
+tar xzf sov-mn-2.0.1-ubuntu.tar.gz -C ~/Scripts/sov
 rm -r sov-mn-2.0.1-ubuntu.tar.gz
 stop_daemon
 
 # Deploy binaries to /usr/bin
-sudo cp SovereignMasternodeSetup/sov/sov* /usr/bin/
-sudo chmod 755 -R ~/SovereignMasternodeSetup
+sudo cp Scripts/sov/sov* /usr/bin/
+sudo chmod 755 -R ~/Scripts
 sudo chmod 755 /usr/bin/sov*
 
 # Deploy masternode monitoring script
-cp ~/SovereignMasternodeSetup/sovmon.sh /usr/local/bin
+cp ~/Scripts/sovmon.sh /usr/local/bin
 sudo chmod 711 /usr/local/bin/sovmon.sh
 
 #Create datadir
